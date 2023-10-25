@@ -3,6 +3,7 @@
 //
 
 import Combine
+import Domain
 import Infrastructure
 import SwiftUI
 
@@ -17,7 +18,8 @@ final class MoviesListScreen: Screen {
     
     convenience init() {
         let router = DefaultMoviesListRouter()
-        let viewModel = MoviesListViewModel(router: router)
+        let useCase = Domain.DI.fetchMovies
+        let viewModel = MoviesListViewModel(router: router, fetchMoviesUseCase: useCase)
         let view = MoviesListView(viewModel: viewModel)
         let viewController = UIHostingController(rootView: view)
         self.init(viewController: viewController, action: router.action)

@@ -13,7 +13,6 @@
 		E90F02332AE906F1006C4F3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E90F02322AE906F1006C4F3C /* Assets.xcassets */; };
 		E90F02362AE906F1006C4F3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E90F02342AE906F1006C4F3C /* LaunchScreen.storyboard */; };
 		E995A23E2AE91D1800DBF2F9 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995A23D2AE91D1800DBF2F9 /* AppCoordinator.swift */; };
-		E9F7CA852AE91F2000D91339 /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = E9F7CA842AE91F2000D91339 /* Data */; };
 		E9F7CA872AE91F2000D91339 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = E9F7CA862AE91F2000D91339 /* Domain */; };
 		E9F7CA892AE91F2000D91339 /* Features in Frameworks */ = {isa = PBXBuildFile; productRef = E9F7CA882AE91F2000D91339 /* Features */; };
 		E9F7CA8B2AE91F2000D91339 /* Infrastructure in Frameworks */ = {isa = PBXBuildFile; productRef = E9F7CA8A2AE91F2000D91339 /* Infrastructure */; };
@@ -37,7 +36,6 @@
 			files = (
 				E9F7CA892AE91F2000D91339 /* Features in Frameworks */,
 				E9F7CA872AE91F2000D91339 /* Domain in Frameworks */,
-				E9F7CA852AE91F2000D91339 /* Data in Frameworks */,
 				E9F7CA8B2AE91F2000D91339 /* Infrastructure in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,7 +98,6 @@
 			);
 			name = Movies;
 			packageProductDependencies = (
-				E9F7CA842AE91F2000D91339 /* Data */,
 				E9F7CA862AE91F2000D91339 /* Domain */,
 				E9F7CA882AE91F2000D91339 /* Features */,
 				E9F7CA8A2AE91F2000D91339 /* Infrastructure */,
@@ -379,10 +376,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E9F7CA842AE91F2000D91339 /* Data */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Data;
-		};
 		E9F7CA862AE91F2000D91339 /* Domain */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Domain;
