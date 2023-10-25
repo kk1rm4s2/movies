@@ -7,13 +7,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        view.backgroundColor = .red
     }
-
-
+    
+    required init?(coder: NSCoder) { nil }
+    
 }
-
