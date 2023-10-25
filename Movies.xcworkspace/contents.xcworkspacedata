@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:Movies.xcodeproj">
+   </FileRef>
+   <Group
+      location = "container:"
+      name = "Modules">
+      <FileRef
+         location = "group:Modules/Domain">
+      </FileRef>
+      <FileRef
+         location = "group:Modules/Data">
+      </FileRef>
+      <FileRef
+         location = "group:/Users/kkiermasz/Movies/Modules/Infrastructure">
+      </FileRef>
+      <FileRef
+         location = "group:Modules/Features">
+      </FileRef>
+   </Group>
+</Workspace>
