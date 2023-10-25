@@ -11,7 +11,7 @@ let package = Package(
         .library(
             name: "Features",
             targets: [
-                "Movies",
+                "Movie",
             ]
         ),
     ],
@@ -21,7 +21,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "Movies",
+            name: "Movie",
             dependencies: [
                 "Infrastructure",
             ]
