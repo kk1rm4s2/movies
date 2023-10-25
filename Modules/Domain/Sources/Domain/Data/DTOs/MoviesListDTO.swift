@@ -9,6 +9,7 @@ struct MovieDTO: Decodable {
     let title: String
     let releaseDate: String
     let posterPath: String
+    let overview: String
 }
 
 struct MoviesListDTO: Decodable {

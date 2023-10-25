@@ -3,6 +3,7 @@
 //
 
 import Combine
+import Domain
 
 final class DefaultMoviesListRouter: MoviesListRouter {
 
@@ -20,7 +21,7 @@ final class DefaultMoviesListRouter: MoviesListRouter {
 
     // MARK: - MoviesListRouter
 
-    func movieTapped(_ id: Int) {
-        _action.send(.movieSelected(id))
+    func movieTapped(_ movie: Movie) {
+        _action.send(.movieSelected(movie))
     }
 }

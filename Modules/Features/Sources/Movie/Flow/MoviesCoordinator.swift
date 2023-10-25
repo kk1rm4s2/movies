@@ -3,6 +3,7 @@
 //
 
 import Combine
+import Domain
 import Infrastructure
 import UIKit
 
@@ -32,15 +33,16 @@ public final class MoviesCoordinator: Coordinator {
         let screen = MoviesListScreen()
         screen.action.sink { [weak self] action in
             switch action {
-            case .movieSelected(let id): self?.presentMovie()
+            case .movieSelected(let movie): self?.presentMovie(movie)
             }
         }.store(in: &container)
         // TODO: Move to extensions
         navigationController.setViewControllers([screen.viewController], animated: false)
     }
 
-    private func presentMovie() {
-        // FIXME:
+    private func presentMovie(_ movie: Movie) {
+        let screen = MovieScreen(movie: movie)
+        navigationController.pushViewController(screen.viewController, animated: true)
     }
 
 }

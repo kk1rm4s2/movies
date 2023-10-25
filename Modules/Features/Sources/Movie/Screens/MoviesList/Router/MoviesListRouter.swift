@@ -3,9 +3,10 @@
 //
 
 import Combine
+import Domain
 
 protocol MoviesListRouter: AnyObject {
 
-    func movieTapped(_ id: Int)
+    func movieTapped(_ movie: Movie)
 
 }

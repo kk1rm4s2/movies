@@ -39,9 +39,9 @@ struct MoviesListView: View {
                 viewModel.movieTapped(item.id)
             } label: {
                 cell(for: item)
+                    .contentShape(.interaction, Rectangle())
             }
             .buttonStyle(.plain)
-            .contentShape(.interaction, Rectangle())
         }
     }
 
@@ -63,6 +63,7 @@ struct MoviesListView: View {
                     .font(.headline)
                 Text(item.date)
             }
+            Spacer()
         }
     }
 

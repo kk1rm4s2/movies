@@ -2,7 +2,6 @@
 //  Copyright © 2023 Jakub Kiermasz. All rights reserved.
 //
 
-import Domain
 import Foundation
 
 struct MoviesListItem: Hashable {

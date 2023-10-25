@@ -12,26 +12,13 @@ final class MoviesListViewModelTests: XCTestCase {
 
     @MainActor func test_OnAppear_CallsUseCase() async {
         let useCaseMock = FetchMoviesUseCaseMock()
-        let sut = MoviesListViewModel(router: MoviesListRouterMock(), fetchMoviesUseCase: useCaseMock)
+        let sut = MoviesListViewModel(router: MoviesListRouterDummy(), fetchMoviesUseCase: useCaseMock)
 
         expect(useCaseMock.executeWasCalled).to(beFalse())
 
         sut.onAppear()
 
         await expect(useCaseMock.executeWasCalled).toEventually(beTrue())
-    }
-
-    @MainActor func test_MovieTapped_CallsRouter() {
-        let routerMock = MoviesListRouterMock()
-        let sut = MoviesListViewModel(router: routerMock, fetchMoviesUseCase: FetchMoviesUseCaseMock())
-
-        expect(routerMock.movieTappedArgumentPassed).to(beNil())
-        expect(routerMock.movieTappedWasCalled).to(beFalse())
-
-        sut.movieTapped(1)
-
-        expect(routerMock.movieTappedArgumentPassed).toNot(beNil())
-        expect(routerMock.movieTappedWasCalled).to(beTrue())
     }
 
 }
@@ -47,14 +34,8 @@ fileprivate final class FetchMoviesUseCaseMock: FetchMoviesUseCase {
 
 }
 
-fileprivate final class MoviesListRouterMock: MoviesListRouter {
+fileprivate final class MoviesListRouterDummy: MoviesListRouter {
 
-    private(set) var movieTappedWasCalled = false
-    private(set) var movieTappedArgumentPassed: Int? = nil
-
-    func movieTapped(_ id: Int) {
-        movieTappedWasCalled = true
-        movieTappedArgumentPassed = id
-    }
+    func movieTapped(_ movie: Domain.Movie) {}
 
 }

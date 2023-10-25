@@ -14,6 +14,8 @@ final class MoviesListViewModel: ObservableObject {
     private let router: MoviesListRouter
     private let fetchMoviesUseCase: FetchMoviesUseCase
 
+    private var movies: [Movie]? { didSet { updateContent() } }
+
     // MARK: - Initialization
 
     init(router: MoviesListRouter, fetchMoviesUseCase: FetchMoviesUseCase) {
@@ -26,14 +28,21 @@ final class MoviesListViewModel: ObservableObject {
     @MainActor
     func onAppear() {
         Task {
-            let movies = try await fetchMoviesUseCase.execute()
-            content = .list(items: movies.map(\.mappedToContent))
+            movies = try await fetchMoviesUseCase.execute()
         }
     }
 
     @MainActor
     func movieTapped(_ id: Int) {
-        router.movieTapped(id)
+        guard let movie = movies?.first(where: { suspect in suspect.id == id }) else { return }
+        router.movieTapped(movie)
+    }
+
+    // MARK: - Private
+
+    func updateContent() {
+        guard let movies else { return }
+        content = .list(items: movies.map(\.mappedToContent))
     }
 
 }
